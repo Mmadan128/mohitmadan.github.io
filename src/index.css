@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Aesthetic Portfolio Design System
+All colors MUST be HSL. Kawaii-tech aesthetic with professional balance.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - soft tech aesthetic */
+    --background: 245 25% 97%;
+    --foreground: 240 15% 15%;
+
+    /* Cards with glassmorphism */
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 15%;
+
+    /* Primary - cute purple */
+    --primary: 280 60% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 285 70% 80%;
+
+    /* Secondary - soft pink */
+    --secondary: 340 50% 85%;
+    --secondary-foreground: 240 15% 15%;
+
+    /* Muted - gentle grays */
+    --muted: 245 15% 92%;
+    --muted-foreground: 240 10% 55%;
+
+    /* Accent - tech blue */
+    --accent: 220 70% 70%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 220 80% 85%;
+
+    /* Tech green for success states */
+    --success: 160 60% 60%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 245 20% 88%;
+    --input: 245 20% 88%;
+    --ring: 280 60% 65%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(280 60% 65%), hsl(285 70% 80%));
+    --gradient-secondary: linear-gradient(135deg, hsl(340 50% 85%), hsl(300 40% 90%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 60% 65%), hsl(220 70% 70%), hsl(315 65% 75%));
+    --gradient-tech: linear-gradient(135deg, hsl(220 70% 70%), hsl(200 60% 75%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px -8px hsl(280 60% 65% / 0.3);
+    --shadow-glow: 0 0 40px hsl(285 70% 80% / 0.4);
+    --shadow-card: 0 8px 32px -12px hsl(240 15% 15% / 0.1);
+
+    /* Animation speeds */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - neon kawaii tech */
+    --background: 240 15% 8%;
+    --foreground: 245 25% 92%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 245 25% 92%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 245 25% 92%;
+
+    --primary: 285 70% 75%;
+    --primary-foreground: 240 15% 8%;
+    --primary-glow: 285 80% 85%;
+
+    --secondary: 340 60% 75%;
+    --secondary-foreground: 240 15% 8%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 10% 65%;
+
+    --accent: 220 80% 75%;
+    --accent-foreground: 240 15% 8%;
+    --accent-glow: 220 90% 85%;
+
+    --success: 160 70% 65%;
+    --success-foreground: 240 15% 8%;
+
+    --destructive: 0 80% 70%;
+    --destructive-foreground: 240 15% 8%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 285 70% 75%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(285 70% 75%), hsl(285 80% 85%));
+    --gradient-secondary: linear-gradient(135deg, hsl(340 60% 75%), hsl(300 50% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(285 70% 75%), hsl(220 80% 75%), hsl(315 70% 80%));
+    --gradient-tech: linear-gradient(135deg, hsl(220 80% 75%), hsl(200 70% 80%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+
+    /* Dark shadows with glow */
+    --shadow-soft: 0 4px 20px -8px hsl(285 70% 75% / 0.4);
+    --shadow-glow: 0 0 40px hsl(285 80% 85% / 0.3);
+    --shadow-card: 0 8px 32px -12px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(245 30% 95%));
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background: linear-gradient(135deg, hsl(var(--background)), hsl(240 15% 6%));
+  }
+
+  /* Glass morphism effects */
+  .glass {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Kawaii animations */
+  .bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+  }
+
+  .glow:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-tech {
+    background: var(--gradient-tech);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
